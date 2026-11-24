@@ -36,7 +36,7 @@ The endpoint is always `https://supportmama.pages.dev`.
 // settings.gradle.kts
 dependencyResolutionManagement { repositories { google(); mavenCentral(); maven("https://jitpack.io") } }
 // app/build.gradle.kts
-implementation("com.github.hsyvy.supportmama-sdk:supportmama:v0.3.0")
+implementation("com.github.hsyvy:supportmama-sdk:v0.3.0")
 ```
 
 ```kotlin

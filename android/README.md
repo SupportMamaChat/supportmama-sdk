@@ -13,7 +13,7 @@ From [JitPack](https://jitpack.io/#hsyvy/supportmama-sdk):
 // settings.gradle.kts
 dependencyResolutionManagement { repositories { maven("https://jitpack.io") } }
 // app/build.gradle.kts
-implementation("com.github.hsyvy.supportmama-sdk:supportmama:v0.3.0")
+implementation("com.github.hsyvy:supportmama-sdk:v0.3.0")
 ```
 
 Or build it locally with `./gradlew :supportmama:publishToMavenLocal` and use

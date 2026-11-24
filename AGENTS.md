@@ -60,13 +60,13 @@ with Kotlin 2.4 and Jetpack Compose; the host app doesn't have to use Compose).
    ```
 
    If the project uses a version catalog, add
-   `supportmama = { group = "com.github.hsyvy.supportmama-sdk", name = "supportmama", version = "v0.3.0" }`
+   `supportmama = { group = "com.github.hsyvy", name = "supportmama-sdk", version = "v0.3.0" }`
    and reference it; otherwise:
 
 2. Add the dependency to the app module:
 
    ```kotlin
-   implementation("com.github.hsyvy.supportmama-sdk:supportmama:v0.3.0")
+   implementation("com.github.hsyvy:supportmama-sdk:v0.3.0")
    ```
 
 3. Initialise it in the `Application` subclass's `onCreate` (create one and
@@ -109,7 +109,7 @@ The library adds `INTERNET`, `ACCESS_NETWORK_STATE` and `POST_NOTIFICATIONS`
 to the merged manifest. It has no Firebase or OkHttp dependency. If the app
 uses R8 / ProGuard, no extra rules are needed (the library ships its own).
 
-Full reference: [android/README.md](android/README.md).
+Full reference: [android/README.md](https://github.com/hsyvy/supportmama-sdk/blob/main/android/README.md).
 
 ## iOS
 
@@ -144,7 +144,7 @@ Requirements: iOS 16+.
 4. Optional: background reply checks (Background Modes → Background fetch,
    `dev.supportmama.refresh` in `BGTaskSchedulerPermittedIdentifiers`, and
    `SupportMama.registerBackgroundRefresh()` at launch), or APNs push. See
-   [ios/README.md](ios/README.md).
+   [ios/README.md](https://github.com/hsyvy/supportmama-sdk/blob/main/ios/README.md).
 
 ## Web
 
@@ -164,11 +164,11 @@ Requirements: iOS 16+.
    add `data-launcher="false"` and call `SupportMama.open()`.
 
 In a framework app (React, Vue, Svelte…), load the same script once (e.g. in
-`index.html` or the root layout). Full reference: [web/README.md](web/README.md).
+`index.html` or the root layout). Full reference: [web/README.md](https://github.com/hsyvy/supportmama-sdk/blob/main/web/README.md).
 
 ## Other platforms
 
-The API is two HTTP endpoints. Read [docs/protocol.md](docs/protocol.md) and
+The API is two HTTP endpoints. Read [docs/protocol.md](https://github.com/hsyvy/supportmama-sdk/blob/main/docs/protocol.md) and
 implement it:
 
 - Generate once per install and store securely: `id` (UUID v4) and `secret`
