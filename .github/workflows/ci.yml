@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  web:
+    name: Web SDK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - working-directory: web
+        # The end-to-end tests need the server, which isn't public; here they're skipped.
+        run: |
+          npm ci
+          npm test
+
+  android:
+    name: Android SDK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v4
+      - working-directory: android
+        run: ./gradlew :supportmama:testDebugUnitTest :supportmama:assembleRelease :sample:assembleDebug
+
+  ios:
+    name: iOS SDK
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test on a simulator
+        run: |
+          DEVICE=$(xcrun simctl list devices available -j \
+            | python3 -c 'import json,sys; d=json.load(sys.stdin)["devices"]; print(next(x["udid"] for k,v in d.items() if "iOS" in k for x in v if x["name"].startswith("iPhone")))')
+          xcodebuild test -scheme SupportMama -destination "id=$DEVICE" | tail -40
+          exit ${PIPESTATUS[0]}

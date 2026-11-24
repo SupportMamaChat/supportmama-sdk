@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 14+ refuses a job with a network constraint without it. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Reply notifications on Android 13+. Asked for only after the user's
+         first message, and only when Config.notifications is on. Remove with
+         tools:node="remove" in your manifest if you turn notifications off. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application>
+        <activity
+            android:name="dev.supportmama.SupportChatActivity"
+            android:exported="false"
+            android:theme="@style/supportmama_Theme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <service
+            android:name="dev.supportmama.ReplyCheckJob"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+</manifest>

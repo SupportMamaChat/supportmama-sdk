@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Override any of these in your app's res/values*/strings.xml to change the
+     wording or add a language. -->
+<resources>
+    <string name="supportmama_title">Chat with us</string>
+    <string name="supportmama_headline">Talk to the team</string>
+    <string name="supportmama_intro">A question, a bug, an idea? Write it here. The people who make this app read every message and reply right in this chat.</string>
+    <string name="supportmama_name_hint">What should we call you? (optional)</string>
+    <string name="supportmama_email">Or email %1$s</string>
+    <string name="supportmama_placeholder">Write a message</string>
+    <string name="supportmama_team">Team</string>
+    <string name="supportmama_waiting">Sent. We\'ll reply here, and let you know when we do.</string>
+    <string name="supportmama_sending">Sending…</string>
+    <string name="supportmama_failed">Not sent. Tap to retry</string>
+    <string name="supportmama_offline">Offline. New replies will show up when you\'re back online.</string>
+    <string name="supportmama_slow_down">That\'s a lot of messages. Try again in a few minutes.</string>
+    <string name="supportmama_screenshot_sent">📎 Screenshot</string>
+    <string name="supportmama_attach_screenshot">Attach a screenshot</string>
+    <string name="supportmama_remove_screenshot">Remove screenshot</string>
+    <string name="supportmama_image_unreadable">Couldn\'t read that image</string>
+    <string name="supportmama_send">Send</string>
+    <string name="supportmama_back">Back</string>
+    <string name="supportmama_channel_name">Support replies</string>
+    <string name="supportmama_channel_description">When the team replies to your message</string>
+    <string name="supportmama_notification_title">%1$s replied</string>
+</resources>

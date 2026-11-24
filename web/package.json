@@ -1,0 +1,27 @@
+{
+  "name": "@supportmama/web",
+  "version": "0.3.0",
+  "description": "In-app support chat for websites and web apps. Your team answers from Telegram or Slack.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/supportmama.js",
+  "jsdelivr": "./dist/supportmama.js",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.mjs" },
+    "./core": { "types": "./dist/core.d.ts", "import": "./dist/core.mjs" }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "keywords": ["support", "chat", "telegram", "slack", "widget", "customer-support"],
+  "scripts": {
+    "build": "node build.mjs && tsc -p tsconfig.json",
+    "test": "npm run build && node --test --test-concurrency=1 test/*.test.mjs",
+    "demo": "npm run build && node demo/dev.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "typescript": "^5.9.3"
+  }
+}

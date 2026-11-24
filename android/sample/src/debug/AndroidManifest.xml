@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Debug builds only: try push without a Firebase project (see TryPushReceiver). -->
+        <receiver
+            android:name=".TryPushReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver"
+            xmlns:tools="http://schemas.android.com/tools">
+            <intent-filter>
+                <action android:name="dev.supportmama.sample.TRY_PUSH" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

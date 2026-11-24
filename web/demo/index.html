@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SupportMama web demo</title>
+  <style>
+    body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 32px 16px; background: #f6f6f4; color: #1c1c1a; }
+    main { max-width: 720px; margin: 0 auto; }
+    .team { background: #fff; border: 1px solid #e4e4df; border-radius: 12px; padding: 16px; margin-top: 24px; }
+    .feed { font-size: 14px; max-height: 220px; overflow: auto; margin: 8px 0; padding: 0; list-style: none; }
+    .feed li { padding: 4px 0; border-bottom: 1px solid #f0f0ec; }
+    .feed .team-msg { color: #2f6fed; }
+    form { display: flex; gap: 8px; }
+    input { flex: 1; font: inherit; padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; }
+    button { font: inherit; padding: 8px 14px; border-radius: 8px; border: 1px solid #2f6fed; background: #2f6fed; color: #fff; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Acme Shop</h1>
+    <p>A pretend website. The chat button sits in the corner; your messages land in the fake team chat below, and you can answer as the team.</p>
+    <p><button type="button" id="help">Open help (from my own button)</button></p>
+    <section class="team">
+      <strong>Team side (fake Telegram topic)</strong>
+      <ul class="feed" id="feed"></ul>
+      <form id="reply"><input id="text" placeholder="Reply as the team… (after the user has written)"><button>Reply</button></form>
+    </section>
+  </main>
+  <script src="/dist/supportmama.js"></script>
+  <script>
+    (async () => {
+      const { endpoint } = await (await fetch('/team/feed')).json();
+      SupportMama.init({ endpoint, appName: 'Acme Shop 2.3.1', attributes: () => ({ plan: 'pro' }) });
+      SupportMama.onUnread((u) => (document.title = (u ? '(1) ' : '') + 'SupportMama web demo'));
+      document.getElementById('help').onclick = () => SupportMama.open('Hi! I need help with ');
+      const feed = document.getElementById('feed');
+      setInterval(async () => {
+        const data = await (await fetch('/team/feed')).json();
+        feed.replaceChildren(...data.feed.map((m) => Object.assign(document.createElement('li'), { textContent: (m.kind === 'team' ? 'Team: ' : '') + m.text, className: m.kind === 'team' ? 'team-msg' : '' })));
+      }, 1000);
+      document.getElementById('reply').onsubmit = async (e) => {
+        e.preventDefault();
+        const input = document.getElementById('text');
+        await fetch('/team/reply', { method: 'POST', body: JSON.stringify({ text: input.value }) });
+        input.value = '';
+      };
+    })();
+  </script>
+</body>
+</html>

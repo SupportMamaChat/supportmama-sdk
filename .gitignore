@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+build/
+.gradle/
+.kotlin/
+local.properties
+*.iml
+.idea/
+captures/
+web/dist/
+.build/
+.swiftpm/
