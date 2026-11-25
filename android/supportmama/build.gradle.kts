@@ -40,7 +40,7 @@ android {
 // `./gradlew :supportmama:publishToMavenLocal`, or JitPack straight from the
 // Git repo (see jitpack.yml at the repo root). On JitPack it's published
 // under JitPack's group so JitPack finds it, and served as
-// com.github.hsyvy:supportmama-sdk:<tag>.
+// com.github.SupportMamaChat:supportmama-sdk:<tag>.
 val jitpack = System.getenv("JITPACK") == "true"
 publishing {
     publications {

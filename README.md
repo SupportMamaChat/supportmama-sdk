@@ -36,7 +36,7 @@ The endpoint is always `https://supportmama.pages.dev`.
 // settings.gradle.kts
 dependencyResolutionManagement { repositories { google(); mavenCentral(); maven("https://jitpack.io") } }
 // app/build.gradle.kts
-implementation("com.github.hsyvy:supportmama-sdk:v0.3.0")
+implementation("com.github.SupportMamaChat:supportmama-sdk:v0.3.0")
 ```
 
 ```kotlin
@@ -47,7 +47,7 @@ SupportMama.open(context)
 ```
 
 **iOS** ([ios/README.md](ios/README.md)): Swift Package
-`https://github.com/hsyvy/supportmama-sdk`, iOS 16+
+`https://github.com/SupportMamaChat/supportmama-sdk`, iOS 16+
 
 ```swift
 SupportMama.configure(.init(endpoint: URL(string: "https://supportmama.pages.dev")!, appKey: "smk_…"))

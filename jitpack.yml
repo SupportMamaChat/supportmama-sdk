@@ -1,5 +1,5 @@
 # JitPack builds the Android library from android/. Users depend on
-# com.github.hsyvy:supportmama-sdk:<tag>.
+# com.github.SupportMamaChat:supportmama-sdk:<tag>.
 jdk:
   - openjdk21
 install:

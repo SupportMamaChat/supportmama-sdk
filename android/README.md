@@ -7,13 +7,13 @@ MIT licensed.
 
 ## Add it
 
-From [JitPack](https://jitpack.io/#hsyvy/supportmama-sdk):
+From [JitPack](https://jitpack.io/#SupportMamaChat/supportmama-sdk):
 
 ```kotlin
 // settings.gradle.kts
 dependencyResolutionManagement { repositories { maven("https://jitpack.io") } }
 // app/build.gradle.kts
-implementation("com.github.hsyvy:supportmama-sdk:v0.3.0")
+implementation("com.github.SupportMamaChat:supportmama-sdk:v0.3.0")
 ```
 
 Or build it locally with `./gradlew :supportmama:publishToMavenLocal` and use

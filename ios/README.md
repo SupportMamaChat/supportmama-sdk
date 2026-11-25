@@ -6,13 +6,13 @@ Telegram or Slack. iOS 16+, no dependencies, no push set-up. MIT licensed.
 ## Add it
 
 Xcode → **File → Add Package Dependencies…** →
-`https://github.com/hsyvy/supportmama-sdk`, product **SupportMama**, from
+`https://github.com/SupportMamaChat/supportmama-sdk`, product **SupportMama**, from
 version 0.3.0. (The `Package.swift` sits at the repository root.)
 
 Or in a `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/hsyvy/supportmama-sdk", from: "0.3.0")
+.package(url: "https://github.com/SupportMamaChat/supportmama-sdk", from: "0.3.0")
 ```
 
 ## Use it
