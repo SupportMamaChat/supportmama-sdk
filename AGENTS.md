@@ -4,8 +4,8 @@ You are adding an in-app support chat to an app. Users write from a
 "Chat with us" screen; the app's team answers from a Telegram group or Slack
 channel. Follow these steps in order. Don't skip the check at the end.
 
-- Service endpoint: `https://supportmama.pages.dev` (always this; it is not a placeholder)
-- Dashboard: `https://supportmama.pages.dev/dashboard/`
+- Service endpoint: `https://supportmama.chat` (always this; it is not a placeholder)
+- Dashboard: `https://supportmama.chat/dashboard/`
 - SDK source and docs: `https://github.com/SupportMamaChat/supportmama-sdk`
 - HTTP API, for other platforms: `https://github.com/SupportMamaChat/supportmama-sdk/blob/main/docs/protocol.md`
 
@@ -81,7 +81,7 @@ with Kotlin 2.4 and Jetpack Compose; the host app doesn't have to use Compose).
        override fun onCreate() {
            super.onCreate()
            SupportMama.init(this, SupportMama.Config(
-               endpoint = "https://supportmama.pages.dev",
+               endpoint = "https://supportmama.chat",
                appKey = "smk_…",
                teamLabel = "Acme team",          // optional: label over replies and on notifications
            ))
@@ -127,7 +127,7 @@ Requirements: iOS 16+.
    import SupportMama
 
    SupportMama.configure(.init(
-       endpoint: URL(string: "https://supportmama.pages.dev")!,
+       endpoint: URL(string: "https://supportmama.chat")!,
        appKey: "smk_…"
    ))
    ```
@@ -155,8 +155,8 @@ Requirements: iOS 16+.
 2. Add the script before `</body>`:
 
    ```html
-   <script src="https://supportmama.pages.dev/sdk/supportmama.js"
-           data-endpoint="https://supportmama.pages.dev"
+   <script src="https://supportmama.chat/sdk/supportmama.js"
+           data-endpoint="https://supportmama.chat"
            data-app-key="smk_…"></script>
    ```
 
@@ -198,7 +198,7 @@ You can also check the API directly, without the app:
 
 ```bash
 ID=$(uuidgen | tr A-Z a-z); SECRET=$(openssl rand -base64 32 | tr '+/' '-_' | tr -d '=')
-curl -s https://supportmama.pages.dev/v1/messages \
+curl -s https://supportmama.chat/v1/messages \
   -H "Authorization: Bearer $ID.$SECRET" -H "X-App-Key: smk_…" \
   -H "Content-Type: application/json" -d '{"text":"curl test"}'
 ```
