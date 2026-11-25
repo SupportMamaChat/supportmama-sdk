@@ -9,8 +9,8 @@ can't clash with your styles. MIT licensed.
 **Script tag**, the quickest way:
 
 ```html
-<script src="https://supportmama.pages.dev/sdk/supportmama.js"
-        data-endpoint="https://supportmama.pages.dev"
+<script src="https://supportmama.chat/sdk/supportmama.js"
+        data-endpoint="https://supportmama.chat"
         data-app-key="smk_…"></script>
 ```
 
@@ -25,7 +25,7 @@ npm install @supportmama/web
 import SupportMama from '@supportmama/web';
 
 SupportMama.init({
-  endpoint: 'https://supportmama.pages.dev',
+  endpoint: 'https://supportmama.chat',
   appKey: 'smk_…',                           // from the dashboard
   appName: 'Acme 2.3.1',                     // first thing your team sees
   attributes: () => ({ plan: user.plan, user: user.id }),
@@ -49,7 +49,7 @@ Options for `init`:
 
 | Option | Default | |
 | --- | --- | --- |
-| `endpoint` | required | `https://supportmama.pages.dev` |
+| `endpoint` | required | `https://supportmama.chat` |
 | `appKey` | required | The app key from the dashboard. |
 | `appName` | the host name | Starts the context line, e.g. `Acme 2.3.1 · Chrome 131 · macOS · en-IN · /checkout`. |
 | `attributes` | | Extra `key: value` facts for the context line. |
@@ -65,7 +65,7 @@ Options for `init`:
 ### Inside your own layout
 
 ```html
-<supportmama-chat endpoint="https://supportmama.pages.dev" app-key="smk_…"
+<supportmama-chat endpoint="https://supportmama.chat" app-key="smk_…"
                   style="height: 600px"></supportmama-chat>
 ```
 

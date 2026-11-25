@@ -1,7 +1,7 @@
 # SupportMama for Android
 
 A drop-in "Chat with us" screen; your team answers from Telegram or Slack.
-Get an app key at [supportmama.pages.dev](https://supportmama.pages.dev/dashboard/).
+Get an app key at [supportmama.chat](https://supportmama.chat/dashboard/).
 Kotlin, Jetpack Compose, minSdk 24. It adds no HTTP client and no Firebase.
 MIT licensed.
 
@@ -26,7 +26,7 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         SupportMama.init(this, SupportMama.Config(
-            endpoint = "https://supportmama.pages.dev",
+            endpoint = "https://supportmama.chat",
             appKey = "smk_…", // from the dashboard
         ))
     }
@@ -151,7 +151,7 @@ rate limiting. Clearing the app's data starts a new, unlinked conversation.
 SupportMama with your app key:
 
 ```bash
-./gradlew :sample:installDebug -Psupportmama.endpoint=https://supportmama.pages.dev -Psupportmama.appKey=smk_…
+./gradlew :sample:installDebug -Psupportmama.endpoint=https://supportmama.chat -Psupportmama.appKey=smk_…
 ```
 
 For push, put your Firebase project's `google-services.json` in `sample/`;

@@ -3,21 +3,21 @@
 **In-app support chat that your team answers from Telegram or Slack.**
 
 These are the open-source (MIT) client SDKs for
-[SupportMama](https://supportmama.pages.dev). Give your Android, iOS or web
+[SupportMama](https://supportmama.chat). Give your Android, iOS or web
 app a "Chat with us" screen; every user who writes in gets their own thread
 in your Telegram group or Slack channel, and your reply shows up in the app
 within seconds.
 
 ```
  your app (these SDKs)                    SupportMama                    your team
- Android · iOS · Web ──HTTPS──▶  supportmama.pages.dev  ──▶  Telegram group: a topic per user
+ Android · iOS · Web ──HTTPS──▶  supportmama.chat  ──▶  Telegram group: a topic per user
           ▲                                                  Slack channel: a thread per user
           └──── replies, in-app + notification ◀──────────── you reply in the thread
 ```
 
 ## 1. Get an app key (2 minutes)
 
-1. Sign in at **[supportmama.pages.dev/dashboard](https://supportmama.pages.dev/dashboard/)**.
+1. Sign in at **[supportmama.chat/dashboard](https://supportmama.chat/dashboard/)**.
 2. **Create an app.** You get an app key that starts with `smk_`. It's public:
    it ships inside your app and only says which app a message is for.
 3. **Connect your team's chat:**
@@ -28,7 +28,7 @@ within seconds.
 
 ## 2. Add the SDK
 
-The endpoint is always `https://supportmama.pages.dev`.
+The endpoint is always `https://supportmama.chat`.
 
 **Android** ([android/README.md](android/README.md)): Kotlin, Compose, minSdk 24
 
@@ -41,7 +41,7 @@ implementation("com.github.SupportMamaChat:supportmama-sdk:v0.3.0")
 
 ```kotlin
 // Application.onCreate
-SupportMama.init(this, SupportMama.Config(endpoint = "https://supportmama.pages.dev", appKey = "smk_…"))
+SupportMama.init(this, SupportMama.Config(endpoint = "https://supportmama.chat", appKey = "smk_…"))
 // From your "Help" button
 SupportMama.open(context)
 ```
@@ -50,15 +50,15 @@ SupportMama.open(context)
 `https://github.com/SupportMamaChat/supportmama-sdk`, iOS 16+
 
 ```swift
-SupportMama.configure(.init(endpoint: URL(string: "https://supportmama.pages.dev")!, appKey: "smk_…"))
+SupportMama.configure(.init(endpoint: URL(string: "https://supportmama.chat")!, appKey: "smk_…"))
 SupportMama.present(from: viewController)        // or .sheet { SupportChatView() }
 ```
 
 **Web** ([web/README.md](web/README.md)): add your site under *Web origins* in the dashboard
 
 ```html
-<script src="https://supportmama.pages.dev/sdk/supportmama.js"
-        data-endpoint="https://supportmama.pages.dev" data-app-key="smk_…"></script>
+<script src="https://supportmama.chat/sdk/supportmama.js"
+        data-endpoint="https://supportmama.chat" data-app-key="smk_…"></script>
 ```
 
 **Anything else** (Flutter, React Native, a backend): it's two HTTP
@@ -75,7 +75,7 @@ once it's delivered.
 
 Point Claude Code, Cursor, Codex or any other agent at
 **[AGENTS.md](AGENTS.md)** (also at
-[supportmama.pages.dev/agents.md](https://supportmama.pages.dev/agents.md)).
+[supportmama.chat/agents.md](https://supportmama.chat/agents.md)).
 It has the exact steps, per platform, and how to check the integration works.
 
 ## What's here

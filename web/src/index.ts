@@ -7,7 +7,7 @@
  *
  * or, without a bundler:
  *
- *   <script src="https://supportmama.pages.dev/sdk/supportmama.js"
+ *   <script src="https://supportmama.chat/sdk/supportmama.js"
  *           data-endpoint="https://…" data-app-key="smk_…"></script>
  *
  * To place the chat inside your own page instead of a floating button:

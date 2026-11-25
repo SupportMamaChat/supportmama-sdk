@@ -15,7 +15,7 @@ if (file("google-services.json").exists()) apply(plugin = "com.google.gms.google
  * as the emulator sees it; point it at your deployed server with
  * `./gradlew :sample:installDebug -Psupportmama.endpoint=https://…`.
  */
-val endpoint = providers.gradleProperty("supportmama.endpoint").orElse("https://supportmama.pages.dev").get()
+val endpoint = providers.gradleProperty("supportmama.endpoint").orElse("https://supportmama.chat").get()
 /** Hosted SupportMama only: `-Psupportmama.appKey=smk_…`. */
 val appKey = providers.gradleProperty("supportmama.appKey").orElse("").get()
 

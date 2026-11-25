@@ -22,7 +22,7 @@ pair means starting a new conversation, which is fine.
 
 ## App key
 
-SupportMama serves many apps from one endpoint, `https://supportmama.pages.dev`. Each call names the
+SupportMama serves many apps from one endpoint, `https://supportmama.chat`. Each call names the
 app with the public key from the dashboard:
 
 ```

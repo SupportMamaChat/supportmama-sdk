@@ -22,7 +22,7 @@ import SupportMama
 
 // At launch: App.init, or application(_:didFinishLaunchingWithOptions:)
 SupportMama.configure(.init(
-    endpoint: URL(string: "https://supportmama.pages.dev")!,
+    endpoint: URL(string: "https://supportmama.chat")!,
     appKey: "smk_…",                         // from the dashboard
     attributes: { ["plan": Account.current.plan] }
 ))
@@ -60,7 +60,7 @@ Unread badge:
 
 | Option | Default | |
 | --- | --- | --- |
-| `endpoint` | required | `https://supportmama.pages.dev` |
+| `endpoint` | required | `https://supportmama.chat` |
 | `appKey` | required | The app key from the dashboard (`smk_…`). |
 | `title`, `headline`, `intro`, `teamLabel` | English | The words on the screen. |
 | `askForName` | true | Offer a "What should we call you?" field. |
